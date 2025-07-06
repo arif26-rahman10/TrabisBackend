@@ -3,67 +3,69 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1 class="text-center">Dashboard Trabis Travel Bengkalis</h1>
+    <h1>Dashboard AdminTrabis</h1>
 @endsection
 
 @section('content')
-<div class="row">
-    <div class="col-lg-3 col-6">
-        <div class="small-box bg-info">
-            <div class="inner">
-                <h3>12</h3>
-                <p>Data Sopir</p>
+    <div class="row">
+        <!-- Total Penumpang -->
+        <div class="col-lg-3 col-6">
+            <div class="small-box bg-info">
+                <div class="inner">
+                    <h3>{{ $totalPenumpang }}</h3>
+                    <p>Total Penumpang</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <a href="{{ route('penumpang.index') }}" class="small-box-footer">Lihat Detail <i class="fas fa-arrow-circle-right"></i></a>
             </div>
-            <div class="icon">
-                <i class="fas fa-user-tie"></i>
-            </div>
-            <a href="#" class="small-box-footer">Lihat Detail <i class="fas fa-arrow-circle-right"></i></a>
         </div>
-    </div>
-    <div class="col-lg-3 col-6">
-        <div class="small-box bg-success">
-            <div class="inner">
-                <h3>45</h3>
-                <p>Data Penumpang</p>
-            </div>
-            <div class="icon">
-                <i class="fas fa-users"></i>
-            </div>
-            <a href="#" class="small-box-footer">Lihat Detail <i class="fas fa-arrow-circle-right"></i></a>
-        </div>
-    </div>
-    <div class="col-lg-3 col-6">
-        <div class="small-box bg-warning">
-            <div class="inner">
-                <h3>8</h3>
-                <p>Jadwal Travel</p>
-            </div>
-            <div class="icon">
-                <i class="fas fa-calendar-alt"></i>
-            </div>
-            <a href="#" class="small-box-footer">Lihat Detail <i class="fas fa-arrow-circle-right"></i></a>
-        </div>
-    </div>
-    <div class="col-lg-3 col-6">
-        <div class="small-box bg-danger">
-            <div class="inner">
-                <h3>5</h3>
-                <p>Monitoring Sistem</p>
-            </div>
-            <div class="icon">
-                <i class="fas fa-chart-line"></i>
-            </div>
-            <a href="#" class="small-box-footer">Lihat Detail <i class="fas fa-arrow-circle-right"></i></a>
-        </div>
-    </div>
-</div>
 
-<div class="card">
-    <div class="card-header">
-        <h3 class="card-title">Informasi Umum</h3>
+        <!-- Total Sopir -->
+        <div class="col-lg-3 col-6">
+            <div class="small-box bg-success">
+                <div class="inner">
+                    <h3>{{ $totalSopir }}</h3>
+                    <p>Total Sopir</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-car"></i>
+                </div>
+                <a href="{{ route('sopir.index') }}" class="small-box-footer">Lihat Detail <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+
+        <!-- Total Jadwal -->
+        <div class="col-lg-3 col-6">
+            <div class="small-box bg-warning">
+                <div class="inner">
+                    <h3>{{ $totalJadwal }}</h3>
+                    <p>Total Jadwal</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <a href="{{ route('jadwal.index') }}" class="small-box-footer">Lihat Detail <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
+
+        <!-- Total Pemesanan -->
+        <div class="col-lg-3 col-6">
+            <div class="small-box bg-danger">
+                <div class="inner">
+                    <h3>{{ $totalPemesanan }}</h3>
+                    <p>Total Pemesanan</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-ticket-alt"></i>
+                </div>
+                <a href="{{ route('pemesanan.index') }}" class="small-box-footer">Lihat Detail <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+        </div>
     </div>
-    <div class="card-body">
-        <p>Selamat datang di sistem manajemen Trabis Travel Bengkalis. Gunakan menu di sidebar untuk mengelola data sopir, penumpang, jadwal perjalanan, serta memantau aktivitas sistem.</p>
+
+    <div class="alert alert-info mt-3">
+        Selamat datang di sistem AdminTrabis! Anda berhasil login sebagai admin.
     </div>
-</div>
 @endsection
